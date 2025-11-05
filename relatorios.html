@@ -10,14 +10,16 @@
 </head>
 <body>
 
-<header>
-  <h1>Relatório de Trocas</h1>
-  <nav>
-    <a href="index.html">Cadastro</a>
-    <a href="lista-impressoras.html">Impressoras</a>
-    <a href="cadastro-troca.html">Registrar Troca</a>
-    <a class="active" href="relatorios.html">Relatórios</a>
-  </nav>
+<header class="header">
+  <div class="header-inner">
+    <h1>Relatório de Trocas</h1>
+    <nav>
+      <a href="index.html">Cadastro</a>
+      <a href="lista-impressoras.html">Impressoras</a>
+      <a href="cadastro-troca.html">Registrar Troca</a>
+      <a class="active" href="relatorios.html">Relatórios</a>
+    </nav>
+  </div>
 </header>
 
 <main class="container">
@@ -25,7 +27,6 @@
   <div style="margin-bottom:12px; display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
     <div class="muted">Listando todas as trocas registradas (coleção <code>registros</code>).</div>
     <div style="margin-left:auto; display:flex; gap:8px;">
-      <!-- filtro por escola (opção 1) -->
       <input id="filtroEscolaRel" class="search" placeholder="Filtrar por Escola">
       <button id="btnLimparFiltrosRel" class="small">Limpar</button>
     </div>
