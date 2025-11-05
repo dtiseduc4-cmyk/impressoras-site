@@ -17,7 +17,6 @@
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 12px;
 }
-.form-full { grid-column: span 2; }
 .table-area {
   margin-top: 20px;
   background: var(--card);
@@ -77,5 +76,32 @@
         <input type="text" id="quemTrocou">
       </div>
 
-      <div class="form-full">
-        <label>Observações:</la
+      <div style="text-align:right;">
+        <button type="submit">Registrar ✅</button>
+        <button type="button" id="btnLimparToner" class="small">Limpar</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="table-area">
+    <h3>Últimas trocas registradas</h3>
+    <table class="tabela">
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Escola</th>
+          <th>Toner</th>
+          <th>Qtd</th>
+        </tr>
+      </thead>
+      <tbody id="tabelaUltimasTrocas">
+        <tr><td colspan="4" class="muted">Nenhuma troca ainda...</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
