@@ -5,6 +5,9 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>Lista de Impressoras</title>
 <link rel="stylesheet" href="styles.css">
+<!-- firebase compat necessário nas páginas (já incluído no seu projeto) -->
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
 </head>
 <body>
 
@@ -18,7 +21,7 @@
   </nav>
 </header>
 
-<main>
+<main class="container">
 
   <div class="controls">
     <div>
@@ -33,19 +36,23 @@
     </div>
   </div>
 
-  <table class="tabela">
-      <thead>
-          <tr>
-              <th>Modelo</th>
-              <th>Toner</th>
-              <th>Escola</th>
-              <th>Propriedade</th>
-              <th>Cadastro</th>
-              <th>Ações</th>
-          </tr>
-      </thead>
-      <tbody id="listaImpressoras"><tr><td colspan="6">Carregando...</td></tr></tbody>
-  </table>
+  <div class="table-wrapper">
+    <table class="tabela">
+        <thead>
+            <tr>
+                <th>Modelo</th>
+                <th>Toner</th>
+                <th>Escola</th>
+                <th>Propriedade</th>
+                <th>Cadastro</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody id="listaImpressoras">
+          <tr><td colspan="6" class="muted">Carregando...</td></tr>
+        </tbody>
+    </table>
+  </div>
 
 </main>
 
