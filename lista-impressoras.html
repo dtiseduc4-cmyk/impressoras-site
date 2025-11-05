@@ -19,6 +19,7 @@
 </header>
 
 <main>
+
   <div class="controls">
     <div>
       <strong>Total geral:</strong> <span id="totalGeral">0</span>
@@ -32,29 +33,19 @@
     </div>
   </div>
 
-  <div style="margin: 20px 0;">
-  <strong>Total geral:</strong> <span id="totalGeral">0</span> |
-  <strong>Total filtrado:</strong> <span id="totalFiltrado">0</span>
-
-  <input type="text" id="filtroEscola" placeholder="Filtrar por Escola" style="margin-left: 20px;">
-  <input type="text" id="filtroToner" placeholder="Filtrar por Toner" style="margin-left: 10px;">
-</div>
-
-<table class="tabela">
-    <thead>
-        <tr>
-            <th>Modelo</th>
-            <th>Toner</th>
-            <th>Escola</th>
-            <th>Propriedade</th>
-            <th>Cadastro</th>
-            <th>Ações</th>
-        </tr>
-    </thead>
-
-    <!-- ✅ A lista será renderizada aqui -->
-    <tbody id="listaImpressoras"></tbody>
-</table>
+  <table class="tabela">
+      <thead>
+          <tr>
+              <th>Modelo</th>
+              <th>Toner</th>
+              <th>Escola</th>
+              <th>Propriedade</th>
+              <th>Cadastro</th>
+              <th>Ações</th>
+          </tr>
+      </thead>
+      <tbody id="listaImpressoras"><tr><td colspan="6">Carregando...</td></tr></tbody>
+  </table>
 
 </main>
 
