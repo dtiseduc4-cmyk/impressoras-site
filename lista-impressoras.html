@@ -1,36 +1,51 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Lista de Impressoras</title>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Lista de Impressoras</title>
 <link rel="stylesheet" href="styles.css">
-<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
 </head>
 <body>
-<header class="header">
-  <div class="container header-inner">
-    <div><h1>Inventário de Impressoras</h1></div>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="cadastro-impressoras.html">Cadastro Impressoras</a>
-      <a href="lista-impressoras.html" class="active">Impressoras</a>
-      <a href="cadastro-troca.html">Cadastro Troca</a>
-      <a href="relatorios.html">Relatórios</a>
-    </nav>
-  </div>
+
+<header>
+  <h1>Lista de Impressoras</h1>
+  <nav>
+    <a href="index.html">Cadastro</a>
+    <a class="active" href="lista-impressoras.html">Impressoras</a>
+    <a href="cadastro-troca.html">Registrar Troca</a>
+    <a href="relatorios.html">Relatórios</a>
+  </nav>
 </header>
 
-<main class="container">
-  <div class="card">
-    <h2>Lista de Impressoras</h2>
-    <div class="controls">
-      <input class="search" id="filtroEscola" placeholder="Filtrar por escola...">
-      <input class="search" id="filtroToner" placeholder="Filtrar por toner...">
+<main>
+  <div class="controls">
+    <div>
+      <strong>Total geral:</strong> <span id="totalGeral">0</span>
+      &nbsp;|&nbsp;
+      <strong>Total filtrado:</strong> <span id="totalFiltrado">0</span>
     </div>
-    <table>
-      <thead><tr><th>Modelo</th><th>Toner</th><th>Escola</th><th>Propriedade</th><th>Data</th><th>Ação</th></tr></thead>
-      <tbody id="lista"></tbody>
-    </table>
+    
+    <div>
+      <input id="filtroEscola" class="search" placeholder="Filtrar por Escola">
+      <input id="filtroToner" class="search" placeholder="Filtrar por Toner">
+    </div>
   </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Modelo</th>
+        <th>Toner</th>
+        <th>Escola</th>
+        <th>Propriedade</th>
+        <th>Cadastro</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody id="lista"></tbody>
+  </table>
+
 </main>
 
 <script src="app.js"></script>
