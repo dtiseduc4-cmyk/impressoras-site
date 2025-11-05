@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Relatório de Trocas</title>
 <link rel="stylesheet" href="styles.css">
 <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
@@ -24,23 +24,27 @@
 
 <main class="container">
 
-  <div style="margin-bottom:12px; display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
-    <div class="muted">Listando todas as trocas registradas (coleção <code>registros</code>).</div>
-    <div style="margin-left:auto; display:flex; gap:8px;">
-      <input id="filtroEscolaRel" class="search" placeholder="Filtrar por Escola">
-      <button id="btnLimparFiltrosRel" class="small">Limpar</button>
-    </div>
+  <!-- FILTROS -->
+  <div class="filtros-rel">
+    <label>Mês:</label>
+    <input type="month" id="filtroMesRel">
+
+    <label>Escola:</label>
+    <input id="filtroEscolaRel" class="search" placeholder="Digite a escola">
+
+    <button id="btnLimparFiltrosRel" class="small">Limpar</button>
   </div>
 
+  <!-- TABELA -->
   <div class="table-wrapper">
     <table class="tabela">
       <thead>
         <tr>
           <th>Data</th>
           <th>Escola</th>
-          <th>Toner / Tipo</th>
-          <th>Modelo — Escola</th>
+          <th>Toner</th>
           <th>Quantidade</th>
+          <th>Responsável</th>
           <th>Ações</th>
         </tr>
       </thead>
