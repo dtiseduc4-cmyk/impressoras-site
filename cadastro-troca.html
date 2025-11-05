@@ -1,59 +1,81 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/><title>Cadastro Troca</title>
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Cadastro Troca</title>
+
 <link rel="stylesheet" href="styles.css">
 <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
-<!-- jsPDF for export (optional) -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+
+<style>
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 12px;
+}
+.form-full { grid-column: span 2; }
+.table-area {
+  margin-top: 20px;
+  background: var(--card);
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(15,23,42,0.06);
+}
+</style>
+
 </head>
 <body>
+
 <header class="header">
-  <div class="container header-inner">
-    <div><h1>Inventário de Impressoras</h1></div>
+  <div class="header-inner">
+    <h1>Cadastro de Troca</h1>
     <nav>
       <a href="index.html">Home</a>
       <a href="cadastro-impressoras.html">Cadastro Impressoras</a>
       <a href="lista-impressoras.html">Impressoras</a>
-      <a href="cadastro-troca.html" class="active">Cadastro Troca</a>
+      <a class="active" href="cadastro-troca.html">Cadastro Troca</a>
       <a href="relatorios.html">Relatórios</a>
     </nav>
   </div>
 </header>
 
 <main class="container">
+
   <div class="card">
-    <h2>Registrar Troca de Toner</h2>
-    <form id="formToner">
-      <label>Escola:</label>
-      <input list="escolasList" id="escolaToner" required>
-      <datalist id="escolasList"></datalist>
+    <h2>Registrar Nova Troca</h2>
 
-      <label>Toner:</label>
-      <input list="tonersList" id="tonerToner" required>
-      <datalist id="tonersList"></datalist>
+    <form id="formToner" class="form-grid">
 
-      <label>Data da Troca:</label>
-      <input type="date" id="dataToner" required>
-
-      <label>Quantidade:</label>
-      <input type="number" id="quantidadeToner" value="1" min="1" required>
-
-      <label>Quem fez a troca:</label>
-      <input type="text" id="quemTrocou">
-
-      <label>Observações:</label>
-      <textarea id="obsToner"></textarea>
-
-      <div style="margin-top:10px;">
-        <button type="submit">Registrar Troca</button>
-        <button type="button" id="btnLimparToner">Limpar</button>
+      <div>
+        <label>Escola:</label>
+        <input list="escolasList" id="escolaToner" required>
+        <datalist id="escolasList"></datalist>
       </div>
-    </form>
-  </div>
-</main>
 
-<script src="app.js"></script>
-</body>
-</html>
+      <div>
+        <label>Toner:</label>
+        <input list="tonersList" id="tonerToner" required>
+        <datalist id="tonersList"></datalist>
+      </div>
+
+      <div>
+        <label>Data da Troca:</label>
+        <input type="date" id="dataToner" required>
+      </div>
+
+      <div>
+        <label>Quantidade:</label>
+        <input type="number" id="quantidadeToner" value="1" min="1" required>
+      </div>
+
+      <div>
+        <label>Quem fez a troca:</label>
+        <input type="text" id="quemTrocou">
+      </div>
+
+      <div class="form-full">
+        <label>Observações:</la
