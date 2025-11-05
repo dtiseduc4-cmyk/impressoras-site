@@ -12,20 +12,31 @@
 <style>
 .form-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 12px;
 }
+
 .table-area {
-  margin-top: 20px;
+  margin-top: 24px;
   background: var(--card);
   padding: 18px;
   border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(15,23,42,0.06);
+  box-shadow: 0 6px 18px rgba(15,23,42,0.08);
 }
-.tabela th, 
-.tabela td {
-  text-align: center;
+
+.btn-acao {
+  cursor: pointer;
+  font-size: 13px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: none;
 }
+.btn-editar { background: #007bff; color: #fff; }
+.btn-salvar { background: #16a34a; color: #fff; }
+.btn-cancelar { background: #6b7280; color: #fff; }
+.btn-excluir { background: #dc2626; color: #fff; }
+
+.tabela th, .tabela td { text-align: center; }
 </style>
 
 </head>
@@ -73,11 +84,6 @@
         <input type="number" id="quantidadeToner" value="1" min="1" required>
       </div>
 
-      <div>
-        <label>Quem fez a troca:</label>
-        <input type="text" id="quemTrocou">
-      </div>
-
       <div style="text-align:right;">
         <button type="submit">Registrar ✅</button>
         <button type="button" id="btnLimparToner" class="small">Limpar</button>
@@ -88,6 +94,7 @@
 
   <div class="table-area">
     <h3>Últimas trocas registradas</h3>
+
     <table class="tabela">
       <thead>
         <tr>
@@ -95,11 +102,11 @@
           <th>Escola</th>
           <th>Toner</th>
           <th>Qtd</th>
-          <th>Quem Fez</th>
+          <th>Ações</th>
         </tr>
       </thead>
       <tbody id="tabelaUltimasTrocas">
-        <tr><td colspan="5" class="muted">Nenhuma troca ainda...</td></tr>
+        <tr><td colspan="5" class="muted">Carregando...</td></tr>
       </tbody>
     </table>
   </div>
