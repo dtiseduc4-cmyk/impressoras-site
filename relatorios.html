@@ -3,36 +3,48 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Relatório de Trocas</title>
+<title>Lista de Impressoras</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <header>
-  <h1>Relatório de Trocas</h1>
+  <h1>Lista de Impressoras</h1>
   <nav>
     <a href="index.html">Cadastro</a>
-    <a href="lista-impressoras.html">Impressoras</a>
+    <a class="active" href="lista-impressoras.html">Impressoras</a>
     <a href="cadastro-troca.html">Registrar Troca</a>
-    <a class="active" href="relatorios.html">Relatórios</a>
+    <a href="relatorios.html">Relatórios</a>
   </nav>
 </header>
 
 <main>
-  <p class="muted">Listando todas as trocas registradas.</p>
 
-  <table>
-    <thead>
-      <tr>
-        <th>Escola</th>
-        <th>Toner / Modelo</th>
-        <th>Qtd</th>
-        <th>Data</th>
-        <th>Responsável</th>
-        <th>Obs.</th>
-      </tr>
-    </thead>
-    <tbody id="tabelaRel"></tbody>
+  <div class="controls">
+    <div>
+      <strong>Total geral:</strong> <span id="totalGeral">0</span>
+      &nbsp;|&nbsp;
+      <strong>Total filtrado:</strong> <span id="totalFiltrado">0</span>
+    </div>
+    
+    <div>
+      <input id="filtroEscola" class="search" placeholder="Filtrar por Escola">
+      <input id="filtroToner" class="search" placeholder="Filtrar por Toner">
+    </div>
+  </div>
+
+  <table class="tabela">
+      <thead>
+          <tr>
+              <th>Modelo</th>
+              <th>Toner</th>
+              <th>Escola</th>
+              <th>Propriedade</th>
+              <th>Cadastro</th>
+              <th>Ações</th>
+          </tr>
+      </thead>
+      <tbody id="listaImpressoras"><tr><td colspan="6">Carregando...</td></tr></tbody>
   </table>
 
 </main>
